@@ -19,10 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+        webView.loadUrl("https://www.google.com");
     }
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
+        webView.loadUrl("https://www.google.com");
     }
 
     @Override
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        webView.loadUrl("https://www.google.com");
 
         /*
         * Rename your App. Tip: Values->Strings
