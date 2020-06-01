@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
-        webView.loadUrl("https://www.google.com");
+        webView.loadUrl("file:///android_asset/sak.html");
     }
 
     public void showInternalWebPage(){
@@ -29,14 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        webView = findViewById(R.id.myWebView);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        webView = findViewById(R.id.my_webview);
         webView.loadUrl("https://www.google.com");
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -90,11 +91,13 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
             Log.d("==>","Will display external web page");
+            showExternalWebPage();
             return true;
         }
 
         if (id == R.id.action_internal_web) {
             Log.d("==>","Will display internal web page");
+            showInternalWebPage();
             return true;
         }
 
